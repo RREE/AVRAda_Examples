@@ -1,0 +1,10 @@
+obj/
+/bin/
+/alire/
+/config/
+*.o
+*.a
+*.ali
+*.elf
+*~
+
