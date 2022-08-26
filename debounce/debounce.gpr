@@ -3,7 +3,7 @@ with "avr_tool_options.gpr";
 with "avrada_mcu.gpr";
 with "avrada_lib.gpr";
 
-project Uart_Echo is
+project Debounce is
 
    for Target use "avr";
    for Runtime ("Ada") use AVRAda_Rts'Project_Dir;
@@ -13,7 +13,7 @@ project Uart_Echo is
    for Create_Missing_Dirs use "True";
    
    for Exec_Dir use ".";
-   for Main use ("uart_out", "uart_echo");
+   for Main use ("debounce_main.adb");
 
    package Builder renames AVR_Tool_Options.Builder;
    
@@ -29,4 +29,4 @@ project Uart_Echo is
       for Switches ("Ada") use AVR_Tool_Options.Linker_Switches;
    end Linker;
 
-end Uart_Echo;
+end Debounce;

@@ -1,0 +1,13 @@
+/obj/
+/bin/
+/alire/
+/config/
+*.o
+*.a
+*.ali
+*.elf
+*.lss
+*.eep
+*~
+avr-uart-4.3.3-AA1.1.asm
+avr-uart-4.5.1-AA1.2.asm
