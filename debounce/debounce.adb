@@ -31,6 +31,11 @@
 --                                                                      *
 --***********************************************************************
 
+--  Expects the keys between Vcc and Gnd, so you can use the internal
+--  pull-up. The port pin is low if the key is pressed.
+--
+--  key pressed -> KEY_INPUT = 0 -> key_state = 1
+
 with Interfaces;                   use Interfaces;
 with AVR;                          use AVR;
 with AVR.MCU;                      use AVR.MCU;

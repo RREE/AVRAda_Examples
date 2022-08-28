@@ -12,7 +12,7 @@ project-files = ["debounce.gpr"]
 
 [configuration.values]
 avrada_rts.AVR_MCU = "attiny2313"
-avrada_rts.Clock_Frequency = "8000000"
+avrada_rts.Clock_Frequency = 8000000
 
 [[depends-on]]
 gnat_avr_elf = "^11"
