@@ -20,15 +20,15 @@ with AVR.UART;                     use AVR.UART;
 
 procedure Uart_Out is
 begin
-   Init (Baud_19200_8MHz);
+   Init (Baud_19200_16MHz);
 
    Put_Line ("start UART out");
 
    loop
       for C in Character range 'a' .. 'z' loop
          Put (C);
-         New_Line;
       end loop;
+      New_Line;
    end loop;
 
 end Uart_Out;

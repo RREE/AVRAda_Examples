@@ -21,7 +21,7 @@ with AVR.UART;                     use AVR.UART;
 procedure Uart_Echo is
    C : Character;
 begin
-   Init (Baud_19200_8MHz);
+   Init (Baud_19200_16MHz);
 
    Put_Line ("start");
 
