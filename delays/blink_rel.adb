@@ -29,11 +29,11 @@ pragma Unreferenced (AVR.Real_Time.Clock);
 --  infrastructure gets initialized by elaborating the body of
 --  AVR.Real_Time.Clock_Impl.
 --
---  AVR.Real_Time.Clock uses AVR.Config (for the quartz frequency) and
---  AVR.Timer0 to generate interrupts at 1000Hz, ie. every 1ms.  The
---  delay routine continuously compares the current time with the end
---  of the delay time for returning. To save power the mcu is put into
---  sleep mode after every tick.
+--  AVR.Real_Time.Clock uses AVRAda_Config.Clock_Frequency (for the
+--  quartz frequency) and AVR.Timer0 to generate interrupts at 1000Hz,
+--  ie. every 1ms.  The delay routine continuously compares the
+--  current time with the end of the delay time for returning. To save
+--  power the mcu is put into sleep mode after every tick.
 
 with LED;
 

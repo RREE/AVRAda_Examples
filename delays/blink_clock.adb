@@ -15,6 +15,8 @@
 -- executable file might be covered by the GNU Public License.           --
 ---------------------------------------------------------------------------
 
+--  The standard Ada 'delay until' does not work without an unpatched
+--  compiler.  Here is a work-around.
 
 with AVR;                          use AVR;
 with AVR.Real_Time;                use AVR.Real_Time;
@@ -39,6 +41,7 @@ begin
          LED.On_1;
          Next_On := Next_On + 1.0;
       end if;
+      delay 0.001; --  sleep for a millisecond
    end loop;
 
 end Blink_Clock;
