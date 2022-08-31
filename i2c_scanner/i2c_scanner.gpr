@@ -1,0 +1,33 @@
+with "avrada_rts.gpr";
+with "avr_tool_options.gpr";
+with "avrada_mcu.gpr";
+with "avrada_lib.gpr";
+
+project I2C_Scanner is
+
+   for Target use "avr";
+   for Runtime ("Ada") use AVRAda_Rts'Project_Dir;
+     
+   for Source_Dirs use (".");
+   for Object_Dir use "obj";
+   for Create_Missing_Dirs use "True";
+   
+   for Exec_Dir use ".";
+   for Main use ("i2c_scanner");
+
+   package Builder renames AVR_Tool_Options.Builder;
+   
+   package Compiler is
+      for Default_Switches ("Ada") use AVR_Tool_Options.ALL_ADAFLAGS;
+      for Switches ("d16.ads") use AVR_Tool_Options.All_Adaflags & "-Os";
+   end Compiler;
+
+   package Binder is
+      for Switches ("Ada") use AVR_Tool_Options.Binder_Switches;
+   end Binder;
+   
+   package Linker is
+      for Switches ("Ada") use AVR_Tool_Options.Linker_Switches;
+   end Linker;
+
+end I2C_Scanner;
