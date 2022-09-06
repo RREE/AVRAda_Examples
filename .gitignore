@@ -1,5 +1,4 @@
-obj/
-/bin/
+/.obj/
 /alire/
 /config/
 *.o
@@ -7,4 +6,4 @@ obj/
 *.ali
 *.elf
 *~
-
+avrada_examples
