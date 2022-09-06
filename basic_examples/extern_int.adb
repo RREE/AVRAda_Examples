@@ -19,11 +19,12 @@ with AVR;                          use AVR;
 with AVR.MCU;
 with AVR.Interrupts;
 with AVR.UART;
+with AVR.Ext_Int;                  use AVR.Ext_Int;
 
 package body Extern_Int is
 
-   Enable_Ext_Int0 : Boolean renames MCU.EIMSK_Bits (MCU.INT0_Bit);
-   Enable_Ext_Int1 : Boolean renames MCU.EIMSK_Bits (MCU.INT1_Bit);
+   --  Enable_Ext_Int0 : Boolean renames MCU.EIMSK_Bits (MCU.INT0_Bit);
+   --  Enable_Ext_Int1 : Boolean renames MCU.EIMSK_Bits (MCU.INT1_Bit);
 
    Int0_Pin : Boolean renames MCU.PORTD_Bits(2);
    Int1_Pin : Boolean renames MCU.PORTD_Bits(3);
@@ -38,15 +39,26 @@ package body Extern_Int is
       --  enable internal pull ups
       Int0_Pin := High;
       Int1_Pin := High;
+
+      --  Original code:
       --  configure ext int 0 and 1 to trigger at falling edges
-      MCU.EICRA_Bits := (MCU.ISC00_Bit => Low,
-                         MCU.ISC01_Bit => High,
-                         MCU.ISC10_Bit => Low,
-                         MCU.ISC11_Bit => High,
-                         others => Low);
-      --  enable the external interrupts in the interrupt mask
-      Enable_Ext_Int0 := True;
-      Enable_Ext_Int1 := True;
+      --  MCU.EICRA_Bits := (MCU.ISC00_Bit => Low,
+      --                     MCU.ISC01_Bit => High,
+      --                     MCU.ISC10_Bit => Low,
+      --                     MCU.ISC11_Bit => High,
+      --                     others => Low);
+      --
+      --  --  enable the external interrupts in the interrupt mask
+      --  Enable_Ext_Int0 := True;
+      --  Enable_Ext_Int1 := True;
+
+      --  Using AVR-Ada library
+      Set_Int0_Sense_Control (Falling_Edge);
+      Set_Int1_Sense_Control (Falling_Edge);
+
+      Enable_External_Interrupt_0;
+      Enable_External_Interrupt_1;
+
       --  enable interrupts generally in the MCU
       AVR.Interrupts.Enable;
    end Init;

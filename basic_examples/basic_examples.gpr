@@ -13,7 +13,7 @@ project Basic_Examples is
    for Create_Missing_Dirs use "True";
    
    for Exec_Dir use ".";
-   for Main use ("extern_int_main");
+   for Main use ("extern_int_main", "flash_led", "voltmeter", "test_eeprom");
 
    package Builder renames AVR_Tool_Options.Builder;
    

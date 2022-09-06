@@ -1,5 +1,5 @@
 name = "avrada_examples_blink"
-description = "Ada for AVR microcontrollers, several ways to blink a LED"
+description = "Ada for AVR microcontrollers, several examples to get started"
 version = "2.0.0"
 
 authors = ["Rolf Ebert"]
@@ -16,9 +16,9 @@ avrada_rts.Clock_Frequency = 16000000
 
 [[depends-on]]
 gnat_avr_elf = "^11"
-avrada_rts = "*"
-avrada_mcu = "*"
-avrada_lib = "*"
+avrada_rts = "^2"
+avrada_mcu = "^2"
+avrada_lib = "^2"
 
 [[pins]]
 avrada_rts = { path = "../../AVRAda_RTS" }
