@@ -1,0 +1,26 @@
+name = "avrada_examples_blink"
+description = "Ada for AVR microcontrollers, several ways to blink a LED"
+version = "2.0.0"
+
+authors = ["Rolf Ebert"]
+maintainers = ["Rolf Ebert <rolf.ebert.gcc@gmx.de>"]
+maintainers-logins = ["RREE"]
+licenses = "GPL-2.0-or-later WITH GCC-exception-3.1"
+website = "https://sourceforge.net/projects/avr-ada/"
+
+project-files = ["basic_examples.gpr"]
+
+[configuration.values]
+avrada_rts.AVR_MCU = "atmega328p"
+avrada_rts.Clock_Frequency = 16000000
+
+[[depends-on]]
+gnat_avr_elf = "^11"
+avrada_rts = "*"
+avrada_mcu = "*"
+avrada_lib = "*"
+
+[[pins]]
+avrada_rts = { path = "../../AVRAda_RTS" }
+avrada_mcu = { path = "../../AVRAda_MCU" }
+avrada_lib = { path = "../../AVRAda_Lib" }
