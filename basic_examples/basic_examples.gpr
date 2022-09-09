@@ -6,14 +6,16 @@ with "avrada_lib.gpr";
 project Basic_Examples is
 
    for Target use "avr";
-   for Runtime ("Ada") use AVRAda_Rts'Project_Dir;
+   for Runtime ("Ada") use AVRAda_RTS'Project_Dir;
      
    for Source_Dirs use (".");
    for Object_Dir use "obj";
    for Create_Missing_Dirs use "True";
    
    for Exec_Dir use ".";
-   for Main use ("extern_int_main", "flash_led", "voltmeter", "test_eeprom");
+   for Main use ("extern_int_main", "flash_led", "voltmeter", "test_eeprom",
+                 "hello_led", "local_exception", "pwm_demo", "walking_led_main",
+                 "family_main");
 
    package Builder renames AVR_Tool_Options.Builder;
    
