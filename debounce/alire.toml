@@ -16,9 +16,9 @@ avrada_rts.Clock_Frequency = 8000000
 
 [[depends-on]]
 gnat_avr_elf = "^11"
-avrada_rts = "*"
-avrada_mcu = "*"
-avrada_lib = "*"
+avrada_rts = "^2"
+avrada_mcu = "^2"
+avrada_lib = "^2"
 
 [[pins]]
 avrada_rts = { path = "../../AVRAda_RTS" }

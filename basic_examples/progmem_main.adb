@@ -14,7 +14,7 @@ with AVR.UART;                     use AVR.UART;
 
 with Progmem_Vars;                 use Progmem_Vars;
 
-procedure Test_Progmem is
+procedure Progmem_Main is
 
    State2_Var : Nat16;
    Element    : Nat8;
@@ -46,4 +46,4 @@ begin
 
    end loop;
 
-end Test_Progmem;
+end Progmem_Main;
