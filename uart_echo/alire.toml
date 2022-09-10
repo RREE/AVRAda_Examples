@@ -1,11 +1,11 @@
 name = "avrada_examples_uart_echo"
-description = "Sample application in Ada for AVR microcontrollers, echo UART input"
-version = "0.1.0-dev"
+description = "Ada for AVR microcontrollers, echo UART input"
+version = "2.0.0"
 
 authors = ["Rolf Ebert"]
 maintainers = ["Rolf Ebert <rolf.ebert.gcc@gmx.de>"]
 maintainers-logins = ["RREE"]
-licenses = "GPL-3.0-or-later WITH GCC-exception-3.1"
+licenses = "GPL-2.0-or-later WITH GCC-exception-3.1"
 website = "https://sourceforge.net/projects/avr-ada/"
 
 project-files = ["uart_echo.gpr"]
@@ -16,9 +16,9 @@ avrada_rts.Clock_Frequency = 16000000
 
 [[depends-on]]
 gnat_avr_elf = "^11"
-avrada_rts = "*"
-avrada_mcu = "*"
-avrada_lib = "*"
+avrada_rts = "^2"
+avrada_mcu = "^2"
+avrada_lib = "^2"
 
 [[pins]]
 avrada_rts = { path = "../../AVRAda_RTS" }
