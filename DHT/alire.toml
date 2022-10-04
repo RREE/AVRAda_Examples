@@ -12,10 +12,10 @@ project-files = ["dht.gpr"]
 
 [configuration.values]
 avrada_rts.AVR_MCU = "atmega328p"
-avrada_rts.Clock_Frequency = "16000000"
+avrada_rts.Clock_Frequency = 16000000
 
 [[depends-on]]
-gnat_avr_elf = "^11"
+gnat_avr_elf = "^11 | ^12.2"
 avrada_rts = "^2"
 avrada_mcu = "^2"
 avrada_lib = "^2"
