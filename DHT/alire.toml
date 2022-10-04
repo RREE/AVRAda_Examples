@@ -1,12 +1,13 @@
 name = "avrada_examples_dht"
 description = "Ada for AVR microcontrollers, DHT temp/humidity sensor"
-version = "2.0.0"
+version = "1.0"
 
 authors = ["Rolf Ebert"]
 maintainers = ["Rolf Ebert <rolf.ebert.gcc@gmx.de>"]
 maintainers-logins = ["RREE"]
 licenses = "GPL-2.0-or-later WITH GCC-exception-3.1"
 website = "https://sourceforge.net/projects/avr-ada/"
+tags = ["avr", "embedded", "demo"]
 
 project-files = ["dht.gpr"]
 
@@ -16,9 +17,9 @@ avrada_rts.Clock_Frequency = 16000000
 
 [[depends-on]]
 gnat_avr_elf = "^11 | ^12.2"
-avrada_rts = "^2"
-avrada_mcu = "^2"
-avrada_lib = "^2"
+avrada_rts = "^2.0.1"
+avrada_mcu = "^2.0.1"
+avrada_lib = "^2.0.1"
 
 [[pins]]
 avrada_rts = { path = "../../AVRAda_RTS" }
