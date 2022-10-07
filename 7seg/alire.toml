@@ -19,5 +19,5 @@ avrada_lib.Process_Timing_Events_In_Ticks = true
 [[depends-on]]
 gnat_avr_elf = "^11 | ^12.2"
 avrada_rts = "^2.0.1"
-avrada_mcu = "^2.0.1"
-avrada_lib = "^2.0.1"
+avrada_mcu = "^2.0.2"
+avrada_lib = "^2.0.2"

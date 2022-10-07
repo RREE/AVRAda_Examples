@@ -18,6 +18,6 @@ avrada_rts.Clock_Frequency = 16000000
 [[depends-on]]
 gnat_avr_elf = "^11 | ^12.2"
 avrada_rts = "^2.0.1"
-avrada_mcu = "^2.0.1"
-avrada_lib = "^2.0.1"
+avrada_mcu = "^2.0.2"
+avrada_lib = "^2.0.2"
 
