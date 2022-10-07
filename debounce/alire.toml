@@ -1,6 +1,6 @@
 name = "avrada_examples_debounce"
 description = "Ada for AVR microcontrollers, debounce keys"
-version = "1.0"
+version = "1.0.1"
 
 authors = ["Rolf Ebert"]
 maintainers = ["Rolf Ebert <rolf.ebert.gcc@gmx.de>"]
@@ -21,7 +21,3 @@ avrada_rts = "^2.0.1"
 avrada_mcu = "^2.0.1"
 avrada_lib = "^2.0.1"
 
-[[pins]]
-avrada_rts = { path = "../../AVRAda_RTS" }
-avrada_mcu = { path = "../../AVRAda_MCU" }
-avrada_lib = { path = "../../AVRAda_Lib" }

@@ -60,7 +60,7 @@ AVRDUDE_PROGRAMMER = stk500v1 -b 57600
 
 # com1 = serial port.
 # programmer connected to serial device, add -b 57600 for Arduinos
-AVRDUDE_PORT = com5 -b 57600 -v -v
+AVRDUDE_PORT = /dev/ttyUSB1
 AVRDUDE_WRITE_FLASH = -U flash:w:
 AVRDUDE_WRITE_EEPROM = -U eeprom:w:
 
@@ -87,18 +87,18 @@ AVRDUDE_FLAGS += $(AVRDUDE_ERASE_COUNTER)
 
 # Define programs and commands.
 BUILD    := alr build
-CC       := avr-gcc
-OBJCOPY  := avr-objcopy
-OBJDUMP  := avr-objdump
+CC       := alr exec -- avr-gcc
+OBJCOPY  := alr exec -- avr-objcopy
+OBJDUMP  := alr exec -- avr-objdump
 SIZE     := /usr/bin/avr-size
-NM       := avr-nm
+# the standard Debian AVR binutils-size has Eric's old AVR size patch
+NM       := alr exec -- avr-nm
 AVRDUDE  := avrdude
 REMOVE   := rm -f
 COPY     := cp
 RENAME   := mv
 SED      := sed
 WINSHELL := cmd
-# the standard Debian AVR binutils-size has Eric's old AVR size patch
 
 
 
@@ -106,6 +106,13 @@ WINSHELL := cmd
 
 all:
 	$(BUILD)
+
+# create assembler files from Ada source files.
+%.s : %.adb
+	alr exec -P2 -- gprbuild -f -u $< -cargs -S
+
+%.s : %.ads
+	alr exec -P2 -- gprbuild -f -u $< -cargs -S
 
 %.size: %.elf FORCE
 	$(SIZE) --format=avr --mcu=$(MCU) $<
@@ -125,13 +132,16 @@ all:
 
 # Create extended listing file from ELF output file.
 %.lss: %.elf
-	$(OBJDUMP) -h -S $< > $@
+	$(OBJDUMP) --headers --source $< > $@
 
 # Create a symbol table from ELF output file.
 %.sym: %.elf
 	$(NM) -n $< > $@
 
-clean_list :
+clean: clean_list
+	alr clean
+
+clean_list:
 	$(REMOVE) *.hex
 	$(REMOVE) *.eep
 	$(REMOVE) *.elf
@@ -144,6 +154,6 @@ clean_list :
 FORCE:
 
 # Listing of phony targets.
-.PHONY : all build elf hex eep lss sym set_config_in_alire clean_list
+.PHONY : all build elf hex eep lss sym clean clean_list
 
 -include $(Makefile_post)

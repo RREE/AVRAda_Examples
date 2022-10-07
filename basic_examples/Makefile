@@ -107,6 +107,13 @@ WINSHELL := cmd
 all:
 	$(BUILD)
 
+# create assembler files from Ada source files.
+%.s : %.adb
+	alr exec -P2 -- gprbuild -f -u $< -cargs -S
+
+%.s : %.ads
+	alr exec -P2 -- gprbuild -f -u $< -cargs -S
+
 %.size: %.elf FORCE
 	$(SIZE) --format=avr --mcu=$(MCU) $<
 
