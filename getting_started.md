@@ -28,17 +28,19 @@ It proposes to install
 - the register definitions of the various supported AVR processors (`avrada_mcu`),
 - and a library of drivers for the on-board peripherals like timers and useful functions like string manipulation (`avrada_lib`).
 
-That already lists the four building blocks of AVR-Ada (see below). Simply hit the Enter key to confirm the choice and Alire will install the mentioned toolchain and the other crates.
+That already lists the four building blocks of AVR-Ada (see below). Hit the Enter key to confirm the choice and Alire will install the mentioned toolchain and the other crates.
 
 ### Compilation 
 
 Simply run `alr build` or `make`. Alire and the GNAT project manager will compile, bind and link all the necessary files. It will show some warnings in `avr-real_time.adb` ('warning: unrecognized pragma "NOT_IMPLEMENTED"') as some procedures are not yet implemented. In the end you have built three programs `blink_busy.elf`, `blink_clock.elf`, and `blink_rel.elf`.
 
 ### Upload
-You have to know which port is used in your OS for the connected Arduino. Probably it is something like `com1:` on Windows or `/dev/ttyUSB0` on Linux. Windows has a device manager if you are unsure. You have to set that port in the `Makefile` at line 67. Set the variable `AVRDUDE_PORT` to whatever the OS choose. 
+You have to know which port your OS uses for the connected to the Arduino. Probably it is something like `com1:` on Windows or `/dev/ttyUSB0` on Linux. Windows has a device manager if you are unsure. You have to set that port in the `Makefile` at line 67. Set the variable `AVRDUDE_PORT` to whatever the OS choose. 
 
 You can then upload your program to the Arduino by
 ```bash
 make blink_busy.prog
 ```
 ![blinky_arduino](https://user-images.githubusercontent.com/176057/210015363-2167e6fe-13fa-40d0-a17d-d25c086f5857.gif)
+
+Please open an issue if something does not work as described here.
