@@ -6,3 +6,5 @@ useful. It serves as a container for the actual examples in the
 subdirectories.
 
 The best starting point is `basic_examples`.
+
+Alternatively, you can follow the steps in [Getting Started](getting_started.md).
