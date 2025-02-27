@@ -1,6 +1,6 @@
-name = "avrada_examples_uart_echo"
+name = "avrada_examples_serial_out"
 description = "Ada for AVR microcontrollers, example programs for serial output"
-version = "1.0.1"
+version = "1.0.0"
 
 authors = ["Rolf Ebert"]
 maintainers = ["Rolf Ebert <rolf.ebert.gcc@gmx.de>"]

@@ -42,7 +42,7 @@
 
 #------------------- device chip (MCU) -------------------------
 # reading the device chip from alire.toml
-MCU := $(shell awk -F= '{IGNORECASE = 1} /^ *AVRADA_RTS.AVR_MCU/ {print $$2;}' alire.toml | xargs)
+MCU := $(shell awk -F= 'tolower($$0) ~ /^ *avrada_rts.avr_mcu/ {print $$2;}' alire.toml | xargs)
 
 #---------------- Programming Options (avrdude) ----------------
 # Output format. (can be srec, ihex, binary)
