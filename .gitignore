@@ -6,4 +6,5 @@
 *.ali
 *.elf
 *~
+*.orig
 avrada_examples

@@ -27,7 +27,7 @@ procedure Print_Ascii is
    subtype Printable is Ascii_Range range 32 .. 126;
    
 begin
-   Serial.Init (Serial.Baud_19200_16MHz);
+   Serial.Init (Serial.Baud_115200_16MHz);
    
    Serial.New_Line;
    Serial.Put_Line ("char | dec |    bin   | hex ");
