@@ -21,8 +21,3 @@ avrada_rts = "^2.1"
 avrada_mcu = "^2.3"
 avrada_lib = "^2.2"
 
-[[pins]]
-avrada_rts = { path = "../../AVRAda_RTS" }
-avrada_mcu = { path = "../../AVRAda_MCU" }
-avrada_lib = { path = "../../AVRAda_Lib" }
-
