@@ -16,7 +16,6 @@
 ---------------------------------------------------------------------------
 
 with AVR;
--- with AVR.Serial;
 with Seven_Seg_Disp.Wiring;        use Seven_Seg_Disp.Wiring;
 with Seven_Seg_Disp.Glyphs;
 

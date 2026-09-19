@@ -18,6 +18,9 @@ package I2C_Addresses is
    --  2019-10-09.
    --  I added the PCF8574 GPIO expander to the list
 
+   Dev_00 : constant Text_In_Progmem :=
+     (7, "unknown")
+     with Linker_Section => ".progmem.data.0";
    Dev_0E : constant Text_In_Progmem :=
      (34, "MAG3110 3-axis magnetometer (0x0E)")
      with Linker_Section => ".progmem.data.14";
@@ -334,7 +337,7 @@ package I2C_Addresses is
       16#74# => PM_String (Dev_74'Address),
       16#76# => PM_String (Dev_76'Address),
       16#77# => PM_String (Dev_77'Address),
-      others => Nil
+      others => PM_String (Dev_00'Address)
      );
 
    --  In previous versions we used a generic

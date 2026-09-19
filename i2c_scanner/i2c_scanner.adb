@@ -36,7 +36,7 @@ is
    Nothing : Boolean;
 begin
    Interrupts.Enable;
-   UART.Init (Baud_57600_16MHz);
+   UART.Init (Baud_115200_16MHz);
    Put_Line ("I2C bus scanner");
 
    I2C.Master.Init;
